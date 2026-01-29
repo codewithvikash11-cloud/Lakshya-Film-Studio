@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import founderImg from '../assets/about-team.png';
 import './FounderSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,7 +49,7 @@ const FounderSection = () => {
                 <div className="founder-grid">
                     <div className="founder-image-wrapper" ref={imgRef}>
                         <div className="gold-frame"></div>
-                        <img src={founderImg} alt="Sandeep Saini" className="founder-img" />
+                        <img src="/Sandeep ji.jpg" alt="Sandeep Saini" className="founder-img" />
                     </div>
 
                     <div className="founder-content" ref={textRef}>

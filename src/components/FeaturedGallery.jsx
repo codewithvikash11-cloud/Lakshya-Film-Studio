@@ -2,14 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './FeaturedGallery.css';
 
-import img1 from '../assets/portfolio-udaipur.png';
-import img2 from '../assets/portfolio-desert.png';
-import img3 from '../assets/hero-bg-royal.png';
-
 const images = [
-    { id: 1, src: img1, title: 'Weddings' },
-    { id: 2, src: img2, title: 'Pre-Wedding' },
-    { id: 3, src: img3, title: 'Cinematic' },
+    { id: 1, src: 'https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&w=800&q=80', title: 'Weddings' },
+    { id: 2, src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80', title: 'Pre-Wedding' },
+    { id: 3, src: 'https://images.unsplash.com/photo-1513278974582-dc55303900ca?auto=format&fit=crop&w=800&q=80', title: 'Cinematic' },
 ];
 
 const FeaturedGallery = () => {
