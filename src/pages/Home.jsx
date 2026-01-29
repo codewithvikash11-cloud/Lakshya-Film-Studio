@@ -1,0 +1,45 @@
+import React from 'react';
+import Hero from '../components/Hero';
+import HomeAbout from '../components/HomeAbout';
+import FeaturedGallery from '../components/FeaturedGallery';
+import Testimonials from '../components/Testimonials';
+import WhatsAppFloat from '../components/WhatsAppFloat';
+import StatsSection from '../components/StatsSection';
+import CTASection from '../components/CTASection';
+
+const Home = () => {
+    return (
+        <div className="page-home">
+            <Hero />
+
+            <HomeAbout />
+
+            {/* Services Preview could go here */}
+
+            <CTASection
+                title="Your Wedding Deserves a Cinematic Story"
+                buttonText="Book Now"
+                link="/contact"
+                variant="primary"
+            />
+
+            <FeaturedGallery />
+
+            <StatsSection />
+
+            <Testimonials />
+
+            <CTASection
+                title="Limited Dates Available for 2026 Wedding Season"
+                buttonText="Check Availability"
+                link="/contact"
+                variant="outline"
+                backgroundImage="https://images.unsplash.com/photo-1519225421980-715cb0202128?auto=format&fit=crop&w=1950&q=80"
+            />
+
+            <WhatsAppFloat />
+        </div>
+    );
+};
+
+export default Home;
