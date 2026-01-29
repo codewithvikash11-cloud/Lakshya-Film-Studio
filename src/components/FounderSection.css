@@ -1,0 +1,103 @@
+.founder-section {
+    background-color: var(--color-dark);
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.founder-image-wrapper {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.founder-img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(20%) contrast(110%);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+.founder-image-wrapper:hover .founder-img {
+    filter: grayscale(0%);
+}
+
+.gold-frame {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-gold);
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.founder-image-wrapper:hover .gold-frame {
+    top: 10px;
+    left: -10px;
+}
+
+.founder-content {
+    text-align: left;
+}
+
+.founder-name {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+
+.founder-role {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.founder-bio {
+    color: var(--color-text);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-family: 'Playfair Display', serif;
+    /* Or a script font if available */
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-gold-dark);
+}
+
+@media (max-width: 960px) {
+    .founder-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .founder-content {
+        text-align: center;
+    }
+
+    .gold-frame {
+        display: none;
+        /* Simplify for mobile */
+    }
+}

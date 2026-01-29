@@ -3,9 +3,10 @@ import Hero from '../components/Hero';
 import HomeAbout from '../components/HomeAbout';
 import FeaturedGallery from '../components/FeaturedGallery';
 import Testimonials from '../components/Testimonials';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import StatsSection from '../components/StatsSection';
 import CTASection from '../components/CTASection';
+import FounderSection from '../components/FounderSection';
+import BehindLensSection from '../components/BehindLensSection';
 
 const Home = () => {
     return (
@@ -13,6 +14,8 @@ const Home = () => {
             <Hero />
 
             <HomeAbout />
+
+            <FounderSection />
 
             {/* Services Preview could go here */}
 
@@ -27,6 +30,8 @@ const Home = () => {
 
             <StatsSection />
 
+            <BehindLensSection />
+
             <Testimonials />
 
             <CTASection
@@ -36,8 +41,6 @@ const Home = () => {
                 variant="outline"
                 backgroundImage="https://images.unsplash.com/photo-1519225421980-715cb0202128?auto=format&fit=crop&w=1950&q=80"
             />
-
-            <WhatsAppFloat />
         </div>
     );
 };

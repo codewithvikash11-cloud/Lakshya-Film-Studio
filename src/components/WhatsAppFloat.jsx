@@ -34,14 +34,14 @@ const WhatsAppFloat = () => {
                 </button>
 
                 <a
-                    href="https://wa.me/919876543210?text=Hello%20Lakshya%20Film%20Studio,%20I%20want%20to%20book%20for%20my%20wedding."
+                    href="https://wa.me/919468825097?text=Hello%20Lakshya%20Film%20Studio,%20I%20want%20to%20book%20for%20my%20wedding."
                     className="whatsapp-float"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat on WhatsApp"
                 >
                     <FaWhatsapp className="whatsapp-icon" />
-                    <span className="whatsapp-tooltip">Chat with us</span>
+                    <span className="whatsapp-tooltip">Chat with us on WhatsApp</span>
                 </a>
             </motion.div>
         </AnimatePresence>

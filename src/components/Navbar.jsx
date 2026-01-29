@@ -1,50 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
+import logoIcon from '../assets/logo-icon.png';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [click, setClick] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
-    const closeMenu = () => {
-        setIsOpen(false);
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrolled ? 'active' : ''}`}>
             <div className="nav-container">
-                <div className="nav-logo">
-                    <NavLink to="/" onClick={closeMenu}>
-                        <h1>Lakshya Film Studio</h1>
-                    </NavLink>
+                <NavLink to="/" className="nav-logo" onClick={closeMobileMenu}>
+                    <img src={logoIcon} alt="Lakshya Film Studio" className="nav-logo-icon" />
+                </NavLink>
+
+                <div className="menu-icon" onClick={handleClick}>
+                    {click ? <FaTimes /> : <FaBars />}
                 </div>
 
-                <div className="nav-toggle" onClick={toggleMenu}>
-                    {isOpen ? <FaTimes /> : <FaBars />}
-                </div>
-
-                <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-                    <li>
-                        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>Home</NavLink>
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className="nav-item">
+                        <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>About</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/about" className="nav-links" onClick={closeMobileMenu}>About</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>Services</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/services" className="nav-links" onClick={closeMobileMenu}>Services</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/portfolio" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>Portfolio</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/portfolio" className="nav-links" onClick={closeMobileMenu}>Portfolio</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/packages" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>Packages</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/packages" className="nav-links" onClick={closeMobileMenu}>Packages</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={closeMenu}>Contact</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/contact" className="nav-links" onClick={closeMobileMenu}>Contact</NavLink>
                     </li>
                 </ul>
             </div>

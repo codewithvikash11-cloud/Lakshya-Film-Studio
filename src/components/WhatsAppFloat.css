@@ -2,10 +2,18 @@
     position: fixed;
     bottom: 24px;
     right: 24px;
-    z-index: 9999;
+    z-index: 999999;
+    /* Updated z-index as requested */
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    pointer-events: auto;
+    /* Ensure clickable */
+}
+
+/* Ensure container doesn't block clicks around it, but its children do */
+.whatsapp-container>* {
+    pointer-events: auto;
 }
 
 .whatsapp-float {
