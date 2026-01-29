@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import founderImg from '../assets/founder.jpg';
+import founderImg from '../assets/about-team.png';
 import './FounderSection.css';
 
 gsap.registerPlugin(ScrollTrigger);

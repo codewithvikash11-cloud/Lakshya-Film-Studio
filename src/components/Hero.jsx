@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Button from './Button';
 import './Hero.css';
-import heroBg from '../assets/hero-bg.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Scene3D from './Scene3D';
+import heroBgRoyal from '../assets/hero-bg-royal.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +53,7 @@ const Hero = () => {
             <div
                 ref={bgRef}
                 className="hero-background-parallax"
-                style={{ backgroundImage: `url(${heroBg})` }}
+                style={{ backgroundImage: `url(${heroBgRoyal})` }}
             ></div>
 
             {/* 3D Scene Layer */}

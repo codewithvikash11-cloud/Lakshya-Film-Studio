@@ -192,3 +192,7 @@ img {
   border-color: var(--color-gold);
   color: var(--color-gold);
 }
+/* Inner Pages Padding */
+.page-about, .page-services, .page-portfolio, .page-packages, .page-contact, .page-book-now, .page-terms, .page-privacy-policy {
+    padding-top: 80px;
+}

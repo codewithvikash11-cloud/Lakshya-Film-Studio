@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import './Portfolio.css';
 
+// Import generated images
+// Using relative paths to assets
+import img1 from '../assets/portfolio-udaipur.png';
+import img2 from '../assets/portfolio-desert.png';
+import img3 from '../assets/service-rituals.png';
+import img4 from '../assets/about-team.png';
+import img5 from '../assets/hero-bg-royal.png';
+import img6 from '../assets/packages-flatlay.png';
+
 const categories = ['All', 'Weddings', 'Pre-Wedding', 'Cinematic', 'Candid', 'Traditional'];
 
-// Placeholder images - using Unsplash for now until AI images are ready
 const portfolioImages = [
-    { id: 1, category: 'Weddings', src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80', size: 'large' },
-    { id: 2, category: 'Pre-Wedding', src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80', size: 'small' },
-    { id: 3, category: 'Cinematic', src: 'https://images.unsplash.com/photo-1513278974582-dc55303900ca?auto=format&fit=crop&w=800&q=80', size: 'medium' },
-    { id: 4, category: 'Weddings', src: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80', size: 'medium' },
-    { id: 5, category: 'Candid', src: 'https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&w=800&q=80', size: 'large' },
-    { id: 6, category: 'Traditional', src: 'https://images.unsplash.com/photo-1583934555035-18969328229b?auto=format&fit=crop&w=800&q=80', size: 'small' },
-    { id: 7, category: 'Weddings', src: 'https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&w=800&q=80', size: 'medium' },
-    { id: 8, category: 'Pre-Wedding', src: 'https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80', size: 'large' },
+    { id: 1, category: 'Weddings', src: img1, size: 'large' },
+    { id: 2, category: 'Pre-Wedding', src: img2, size: 'medium' },
+    { id: 3, category: 'Traditional', src: img3, size: 'medium' },
+    { id: 4, category: 'Cinematic', src: img4, size: 'small' },
+    { id: 5, category: 'Weddings', src: img5, size: 'large' },
+    { id: 6, category: 'Details', src: img6, size: 'small' },
 ];
 
 const Portfolio = () => {

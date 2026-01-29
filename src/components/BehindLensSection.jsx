@@ -1,7 +1,7 @@
 import React from 'react';
 import './BehindLensSection.css';
-import studioImg from '../assets/studio-workspace.png';
-import cameraImg from '../assets/camera-gear.png';
+import studioImg from '../assets/contact-studio.png';
+import cameraImg from '../assets/about-team.png';
 
 const BehindLensSection = () => {
     return (
