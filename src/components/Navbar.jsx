@@ -11,13 +11,23 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
+    // Body scroll lock
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        if (click) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [click]);
+
+    const navItems = [
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+        { name: 'Services', path: '/services' },
+        { name: 'Portfolio', path: '/portfolio' },
+        { name: 'Packages', path: '/packages' },
+        { name: 'Contact', path: '/contact' },
+    ];
 
     return (
         <nav className={`navbar ${scrolled ? 'active' : ''}`}>
@@ -30,26 +40,33 @@ const Navbar = () => {
                     {click ? <FaTimes /> : <FaBars />}
                 </div>
 
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className="nav-item">
-                        <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>Home</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/about" className="nav-links" onClick={closeMobileMenu}>About</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/services" className="nav-links" onClick={closeMobileMenu}>Services</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/portfolio" className="nav-links" onClick={closeMobileMenu}>Portfolio</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/packages" className="nav-links" onClick={closeMobileMenu}>Packages</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/contact" className="nav-links" onClick={closeMobileMenu}>Contact</NavLink>
-                    </li>
+                {/* Desktop Menu */}
+                <ul className="nav-menu">
+                    {navItems.map((item) => (
+                        <li key={item.name} className="nav-item">
+                            <NavLink to={item.path} className="nav-links">
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    ))}
                 </ul>
+
+                {/* Mobile Menu Overlay */}
+                <div className={click ? "mobile-menu-overlay active" : "mobile-menu-overlay"}>
+                    <ul className="mobile-nav-items">
+                        {navItems.map((item) => (
+                            <li key={item.name} className="mobile-nav-item">
+                                <NavLink
+                                    to={item.path}
+                                    className="mobile-nav-link"
+                                    onClick={closeMobileMenu}
+                                >
+                                    {item.name}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </nav>
     );
