@@ -11,6 +11,20 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     // Body scroll lock
     useEffect(() => {
         if (click) {
@@ -30,7 +44,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`navbar ${scrolled ? 'active' : ''}`}>
+        <nav className={`navbar ${scrolled ? 'active' : ''} ${click ? 'mobile-menu-open' : ''}`}>
             <div className="nav-container">
                 <NavLink to="/" className="nav-logo" onClick={closeMobileMenu}>
                     <img src={logoIcon} alt="Lakshya Film Studio" className="nav-logo-icon" />
@@ -53,9 +67,16 @@ const Navbar = () => {
 
                 {/* Mobile Menu Overlay */}
                 <div className={click ? "mobile-menu-overlay active" : "mobile-menu-overlay"}>
+                    <div className="mobile-menu-header">
+                        <img src={logoIcon} alt="Lakshya Film Studio" className="mobile-logo" />
+                        <div className="mobile-close" onClick={closeMobileMenu}>
+                            <FaTimes />
+                        </div>
+                    </div>
+
                     <ul className="mobile-nav-items">
-                        {navItems.map((item) => (
-                            <li key={item.name} className="mobile-nav-item">
+                        {navItems.map((item, index) => (
+                            <li key={item.name} className="mobile-nav-item" style={{ animationDelay: `${index * 0.1}s` }}>
                                 <NavLink
                                     to={item.path}
                                     className="mobile-nav-link"
@@ -66,6 +87,22 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
+
+                    <div className="mobile-menu-footer">
+                        <div className="mobile-cta-group">
+                            <NavLink to="/contact" className="btn btn-primary w-full" onClick={closeMobileMenu}>
+                                Book Your Date
+                            </NavLink>
+                            <a
+                                href="https://wa.me/919468825097?text=Hello%20Lakshya%20Film%20Studio"
+                                className="btn btn-secondary w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

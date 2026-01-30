@@ -46,13 +46,15 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 92.5%;
+  /* Reduces global font size by ~8% (16px -> 14.8px) */
 }
 
 body {
   background-color: var(--color-black);
   color: var(--color-text);
   font-family: var(--font-body);
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -151,6 +153,7 @@ img {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.9rem;
+  line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: 2px solid var(--color-gold);
