@@ -1,4 +1,7 @@
-/* Responsive Fixes & Global Updates */
+/* =============================================
+   GLOBAL RESPONSIVE FIXES
+   Premium Wedding Website
+   ============================================= */
 
 /* Clamp Typography */
 h1 {
@@ -14,6 +17,68 @@ h2 {
     width: 100%;
 }
 
+/* =============================================
+   BUTTON RESPONSIVE SYSTEM
+   ============================================= */
+
+/* Tablet (768px - 992px) */
+@media (max-width: 992px) {
+
+    /* Button group layouts */
+    .hero-buttons,
+    .cta-buttons {
+        gap: 1rem;
+    }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    /* Button stacking */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Grid layouts */
+    .about-grid,
+    .founder-grid,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-image,
+    .founder-image-wrapper {
+        order: -1;
+        /* Image first on mobile */
+    }
+}
+
+/* Small Mobile (max 480px) */
 @media (max-width: 480px) {
 
     /* Global Padding */
@@ -28,13 +93,18 @@ h2 {
 
     .hero-buttons {
         flex-direction: column;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
         width: 100%;
     }
 
+    /* Full width buttons on small mobile */
     .btn {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+    }
+
+    .hero-buttons .btn {
+        max-width: none;
     }
 
     /* Founder Section */
@@ -59,25 +129,61 @@ h2 {
     .nav-logo-icon {
         height: 40px;
     }
+
+    /* Pricing Cards - Full width buttons */
+    .pricing-card .btn {
+        width: 100%;
+    }
+
+    /* Contact form button */
+    .contact-form .btn {
+        width: 100%;
+    }
 }
 
-/* Tablet Optimizations */
-@media (max-width: 768px) {
-    .hero-content {
-        padding: 0 15px;
+/* =============================================
+   BUTTON ACCESSIBILITY - Touch Targets
+   ============================================= */
+@media (pointer: coarse) {
+
+    /* Touch devices need larger tap targets */
+    .btn {
+        min-height: 48px;
+        padding-top: 14px;
+        padding-bottom: 14px;
     }
 
-    .about-grid,
-    .founder-grid,
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+    .btn-large {
+        min-height: 56px;
     }
 
-    .about-image,
-    .founder-image-wrapper {
-        order: -1;
-        /* Image first on mobile */
+    /* Remove hover effects on touch */
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn:hover::before {
+        left: -100%;
+    }
+
+    .btn:hover::after {
+        width: 0%;
+    }
+
+    .btn-primary:hover {
+        background: var(--color-gold);
+        box-shadow: none;
+    }
+
+    /* Active state for touch feedback */
+    .btn:active {
+        transform: scale(0.98);
+        background: var(--color-gold);
+        color: var(--color-black);
+    }
+
+    .btn-primary:active {
+        background: var(--color-gold-dark);
     }
 }

@@ -54,3 +54,19 @@
     outline: none;
     border-color: var(--color-gold);
 }
+
+/* Contact Form Button */
+.contact-form .btn {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .contact-form .btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+
+    .info-item {
+        font-size: 1rem;
+    }
+}

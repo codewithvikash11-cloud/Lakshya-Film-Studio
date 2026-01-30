@@ -1,28 +1,131 @@
-/* Button Specific Styles if needed, mostly in index.css */
+/* =============================================
+   BUTTON COMPONENT SPECIFIC STYLES
+   Premium Cinematic Wedding Theme
+   ============================================= */
+
+/* Secondary Button - Transparent with Gold Border */
 .btn-secondary {
     background: transparent;
-    color: var(--color-white);
-    border: 1px solid var(--color-white);
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
 }
 
 .btn-secondary:hover {
-    background: var(--color-white);
+    background: var(--color-gold);
     color: var(--color-black);
-    border-color: var(--color-white);
+    border-color: var(--color-gold);
 }
 
+/* Outline Button Variants */
 .btn-outline {
     background: transparent;
-    border: 1px solid var(--color-gold);
+    border: 2px solid var(--color-gold);
     color: var(--color-gold);
 }
 
 .btn-outline:hover {
     background: var(--color-gold);
     color: var(--color-black);
+    border-color: var(--color-gold);
 }
 
+/* White Outline - For use on dark image backgrounds */
+.btn-outline-white,
+.btn-outline.btn-white {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.btn-outline-white::after,
+.btn-outline.btn-white::after {
+    background: var(--color-white);
+}
+
+.btn-outline-white:hover,
+.btn-outline.btn-white:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+/* Large Button for CTAs */
 .btn-large {
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    padding: 18px 44px;
+    font-size: 1rem;
+    min-height: 56px;
+    letter-spacing: 2px;
+}
+
+/* Small Button */
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    min-height: 40px;
+    letter-spacing: 1px;
+}
+
+/* Icon Buttons - With SVG icons inside */
+.btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.btn-large svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* =============================================
+   RESPONSIVE BUTTON STYLES
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.85rem;
+    }
+
+    .btn-large {
+        padding: 16px 36px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .btn {
+        padding: 14px 24px;
+        font-size: 0.85rem;
+        min-height: 48px;
+    }
+
+    .btn-large {
+        padding: 16px 32px;
+        font-size: 0.9rem;
+        min-height: 52px;
+    }
+
+    /* Remove hover scale on touch devices */
+    .btn:hover {
+        transform: none;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .btn-large {
+        padding: 16px 24px;
+    }
 }

@@ -217,6 +217,16 @@
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+    .pricing-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1.02);
+    }
+}
+
 @media (max-width: 768px) {
     .pricing-card.featured {
         transform: scale(1);
@@ -234,5 +244,49 @@
     .compare-table td {
         padding: 0.8rem;
         font-size: 0.9rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn,
+    .cta-buttons a.btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-grid {
+        gap: 1.5rem;
+    }
+
+    .pricing-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .pricing-card .btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .package-title {
+        font-size: 1.4rem;
+    }
+
+    .features-list li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+
+    .cta-buttons .btn,
+    .cta-buttons a.btn {
+        max-width: none;
     }
 }

@@ -71,7 +71,7 @@ const Hero = () => {
                 </p>
                 <div className="hero-buttons" ref={btnRef}>
                     <Button to="/contact" variant="primary">Book Your Date</Button>
-                    <Button to="/portfolio" variant="outline" style={{ color: '#FAFAFA', borderColor: '#FAFAFA' }}>View Portfolio</Button>
+                    <Button to="/portfolio" variant="outline">View Portfolio</Button>
                 </div>
             </div>
 
