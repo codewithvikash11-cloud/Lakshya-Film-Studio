@@ -1,0 +1,74 @@
+/* About Page Styles */
+.about-hero {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 150px 0 100px;
+    position: relative;
+}
+
+.about-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-image img {
+    border-radius: 8px;
+    border: 1px solid var(--color-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .about-hero {
+        padding: 100px 0 60px;
+        /* Reduced vertical padding */
+    }
+
+    .about-hero-title {
+        font-size: 2.2rem;
+        /* Smaller heading */
+    }
+
+    .about-hero-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        /* Stack content */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-image {
+        order: -1;
+        /* Show image first on mobile (optional, usually looks good) */
+    }
+
+    /* Make image slightly smaller/contained on mobile */
+    .about-image img {
+        max-width: 100%;
+    }
+}
