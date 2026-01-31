@@ -44,7 +44,7 @@ const FounderSection = () => {
     return (
         <section className="founder-section section-padding" ref={sectionRef}>
             <div className="container">
-                <h2 className="text-center text-gold section-title">Meet the Founder</h2>
+                <h2 className="text-center text-gold section-title">Meet the Owner</h2>
 
                 <div className="founder-grid">
                     <div className="founder-image-wrapper" ref={imgRef}>
@@ -54,7 +54,7 @@ const FounderSection = () => {
 
                     <div className="founder-content" ref={textRef}>
                         <h3 className="founder-name">Sandeep Saini</h3>
-                        <p className="founder-role text-gold">Founder & Lead Cinematographer</p>
+                        <p className="founder-role text-gold">Owner & Lead Cinematographer</p>
                         <p className="founder-bio">
                             With a vision to transform wedding memories into cinematic masterpieces, Sandeep established Lakshya Film Studio.
                             His passion for storytelling and keen eye for detail ensures that every frame speaks a thousand emotions.
