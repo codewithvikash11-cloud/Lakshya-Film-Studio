@@ -1,0 +1,115 @@
+.how-we-work {
+    background-color: var(--color-black);
+    position: relative;
+}
+
+.timeline-container {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    position: relative;
+    padding: 0 1rem;
+}
+
+/* Vertical Line for Desktop */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+    z-index: 0;
+}
+
+.step-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-row:last-child {
+    margin-bottom: 0;
+}
+
+.step-left,
+.step-right {
+    width: 45%;
+}
+
+.step-left {
+    text-align: right;
+}
+
+.step-right {
+    text-align: left;
+}
+
+.step-number-container {
+    width: 50px;
+    height: 50px;
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    z-index: 2;
+}
+
+.step-content {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.step-title {
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.step-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-container::before {
+        left: 20px;
+    }
+
+    .step-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px;
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    .step-number-container {
+        position: absolute;
+        left: -5px;
+        top: 0;
+    }
+
+    .step-left,
+    .step-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .step-content {
+        margin-top: 0.5rem;
+    }
+}

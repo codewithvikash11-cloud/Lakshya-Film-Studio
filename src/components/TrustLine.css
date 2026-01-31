@@ -1,0 +1,20 @@
+.trust-line {
+    padding: 2rem 0;
+    background-color: var(--color-black);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.trust-line p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .trust-line p {
+        font-size: 0.9rem;
+    }
+}

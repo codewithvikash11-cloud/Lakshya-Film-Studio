@@ -8,16 +8,29 @@ import CTASection from '../components/CTASection';
 import FounderSection from '../components/FounderSection';
 import BehindLensSection from '../components/BehindLensSection';
 
+// New Components
+import TrustLine from '../components/TrustLine';
+import WhyChooseUs from '../components/WhyChooseUs';
+import HowWeWork from '../components/HowWeWork';
+import MobileStickyCTA from '../components/MobileStickyCTA';
+
 const Home = () => {
     return (
         <div className="page-home">
             <Hero />
 
+            {/* 1. Trust Line - Immediate Credibility */}
+            <TrustLine />
+
             <HomeAbout />
+
+            {/* 2. Why Choose Us - Value Proposition */}
+            <WhyChooseUs />
 
             <FounderSection />
 
-            {/* Services Preview could go here */}
+            {/* 3. How We Work - Process Transparency */}
+            <HowWeWork />
 
             <CTASection
                 title="Your Wedding Deserves a Cinematic Story"
@@ -41,6 +54,9 @@ const Home = () => {
                 variant="outline"
                 backgroundImage="https://images.unsplash.com/photo-1519225421980-715cb0202128?auto=format&fit=crop&w=1950&q=80"
             />
+
+            {/* 4. Mobile Sticky CTA - Conversion Booster */}
+            <MobileStickyCTA />
         </div>
     );
 };
