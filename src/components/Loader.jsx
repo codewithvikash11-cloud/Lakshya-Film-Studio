@@ -1,8 +1,7 @@
 import React from 'react';
-import Lottie from 'lottie-react';
-import cameraAnimation from '../assets/camera-loader.json'; // Placeholder path
 
-const Loader = ({ onComplete }) => {
+
+const Loader = () => {
     // Simulating animation completion or wait
     // In a real app, you might wait for assets to load
 

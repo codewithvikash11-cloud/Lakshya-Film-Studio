@@ -4,6 +4,16 @@ import Button from '../components/Button';
 import './Contact.css';
 
 const Contact = () => {
+    const [submitted, setSubmitted] = React.useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Simulate form submission
+        setTimeout(() => {
+            setSubmitted(true);
+        }, 500);
+    };
+
     return (
         <div className="page-contact section-padding">
             <div className="container">
@@ -42,21 +52,29 @@ const Contact = () => {
 
                     {/* Form Section */}
                     <div className="contact-form-container">
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                            <div className="form-group">
-                                <input type="text" placeholder="Your Name" required />
+                        {submitted ? (
+                            <div className="success-message text-center">
+                                <h3 className="text-gold">Thank You!</h3>
+                                <p>Your message has been sent successfully. We will get back to you soon.</p>
+                                <Button onClick={() => setSubmitted(false)} variant="outline" style={{ marginTop: '1rem' }}>Send Another</Button>
                             </div>
-                            <div className="form-group">
-                                <input type="email" placeholder="Your Email" required />
-                            </div>
-                            <div className="form-group">
-                                <input type="tel" placeholder="Phone Number" required />
-                            </div>
-                            <div className="form-group">
-                                <textarea rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <Button type="submit" variant="primary" style={{ width: '100%' }}>Send Message</Button>
-                        </form>
+                        ) : (
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <input type="text" placeholder="Your Name" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="email" placeholder="Your Email" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="tel" placeholder="Phone Number" required />
+                                </div>
+                                <div className="form-group">
+                                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <Button type="submit" variant="primary" style={{ width: '100%' }}>Send Message</Button>
+                            </form>
+                        )}
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp, FaTimes } from 'react-icons/fa';
 import './WhatsAppFloat.css';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 const WhatsAppFloat = () => {

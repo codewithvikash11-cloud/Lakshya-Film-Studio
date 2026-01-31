@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 24px;
     right: 24px;
-    z-index: 999999;
-    /* Updated z-index as requested */
+    z-index: 9990;
+    /* Updated z-index to be behind mobile menu (10000) */
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -147,4 +147,11 @@
         display: none;
         /* Hide tooltip on mobile */
     }
+}
+
+/* Mobile Menu Dimming Effect */
+body.mobile-nav-open .whatsapp-container {
+    opacity: 0.2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }

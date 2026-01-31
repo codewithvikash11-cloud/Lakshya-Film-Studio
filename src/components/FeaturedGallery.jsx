@@ -23,7 +23,7 @@ const FeaturedGallery = () => {
                 <div className="gallery-grid-home">
                     {images.map((img) => (
                         <div key={img.id} className="gallery-item">
-                            <img src={img.src} alt={img.title} />
+                            <img src={img.src} alt={img.title} loading="lazy" />
                             <div className="gallery-overlay">
                                 <h4>{img.title}</h4>
                             </div>

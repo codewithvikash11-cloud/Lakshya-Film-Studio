@@ -46,8 +46,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 92.5%;
-  /* Reduces global font size by ~8% (16px -> 14.8px) */
+  font-size: 94%;
+  /* global reduction */
 }
 
 body {

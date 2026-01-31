@@ -5,11 +5,10 @@ import './Navbar.css';
 import logoIcon from '../assets/logo-icon.png';
 
 const Navbar = () => {
-    const [click, setClick] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
+    const closeMobileMenu = () => setIsMenuOpen(false);
 
     // Handle scroll effect
     useEffect(() => {
@@ -26,13 +25,24 @@ const Navbar = () => {
     }, []);
 
     // Body scroll lock
+    // Body scroll lock
     useEffect(() => {
-        if (click) {
+        if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
+            document.body.style.touchAction = 'none';
+            document.body.classList.add('mobile-nav-open');
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = '';
+            document.body.style.touchAction = '';
+            document.body.classList.remove('mobile-nav-open');
         }
-    }, [click]);
+
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.touchAction = '';
+            document.body.classList.remove('mobile-nav-open');
+        };
+    }, [isMenuOpen]);
 
     const navItems = [
         { name: 'Home', path: '/' },
@@ -44,15 +54,15 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`navbar ${scrolled ? 'active' : ''} ${click ? 'mobile-menu-open' : ''}`}>
+        <nav className={`navbar ${scrolled ? 'active' : ''} ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
             <div className="nav-container">
                 <NavLink to="/" className="nav-logo" onClick={closeMobileMenu}>
                     <img src={logoIcon} alt="Lakshya Film Studio" className="nav-logo-icon" />
                 </NavLink>
 
-                <div className="menu-icon" onClick={handleClick}>
-                    {click ? <FaTimes /> : <FaBars />}
-                </div>
+                <button className="menu-icon" onClick={() => setIsMenuOpen(true)} aria-label="Open Menu">
+                    <FaBars />
+                </button>
 
                 {/* Desktop Menu */}
                 <ul className="nav-menu">
@@ -66,12 +76,12 @@ const Navbar = () => {
                 </ul>
 
                 {/* Mobile Menu Overlay */}
-                <div className={click ? "mobile-menu-overlay active" : "mobile-menu-overlay"}>
+                <div className={isMenuOpen ? "mobile-menu-overlay active" : "mobile-menu-overlay"}>
                     <div className="mobile-menu-header">
                         <img src={logoIcon} alt="Lakshya Film Studio" className="mobile-logo" />
-                        <div className="mobile-close" onClick={closeMobileMenu}>
+                        <button className="mobile-close" onClick={() => setIsMenuOpen(false)} aria-label="Close Menu">
                             <FaTimes />
-                        </div>
+                        </button>
                     </div>
 
                     <ul className="mobile-nav-items">
@@ -80,7 +90,10 @@ const Navbar = () => {
                                 <NavLink
                                     to={item.path}
                                     className="mobile-nav-link"
-                                    onClick={closeMobileMenu}
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        window.scrollTo(0, 0);
+                                    }}
                                 >
                                     {item.name}
                                 </NavLink>
@@ -98,6 +111,7 @@ const Navbar = () => {
                                 className="btn btn-secondary w-full"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={closeMobileMenu}
                             >
                                 Chat on WhatsApp
                             </a>
