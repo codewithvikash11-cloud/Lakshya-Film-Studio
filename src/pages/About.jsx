@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div className="page-about">
             <div
-                className="about-hero section-padding"
+                className="about-hero"
                 style={{
                     background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url(${serviceBg})`
                 }}
